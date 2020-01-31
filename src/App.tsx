@@ -1,6 +1,5 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { AppearanceProvider } from 'react-native-appearance';
 import env from './env';
 import { TextInput } from './components';
 import ThemeContext, { THEME_DEFAULT } from './themes/ThemeContext';

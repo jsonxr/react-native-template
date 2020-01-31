@@ -18,4 +18,5 @@ export interface Theme {
   };
 }
 
+// eslint-disable-next-line no-undef
 export default Theme;

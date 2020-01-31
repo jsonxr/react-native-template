@@ -53,7 +53,7 @@
       "node"
     ],
     "setupFiles": [
-      "<rootDir>/src/jest.setup.ts"
+      "<rootDir>/.jest-setup.ts"
     ]
   },
   "husky": {
