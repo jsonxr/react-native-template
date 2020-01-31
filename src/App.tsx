@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import env from './env';
+import { TextInput } from './components';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <View style={styles.container}>
           <Text style={styles.welcome}>Jason to React Native!</Text>
           <Text>{env.API_KEY}</Text>
+          <TextInput value="jason" />
         </View>
       </SafeAreaView>
     </>

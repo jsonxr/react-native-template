@@ -1,8 +1,6 @@
 import React from 'react';
-import { TextInput, TextInputProps } from 'react-native';
+import { TextInput as ReactTextInput, TextInputProps } from 'react-native';
 
-const StyledTextInput: React.FC<TextInputProps> = props => (
-  <TextInput value={Date.now().toString()} {...props} />
+export const TextInput: React.FC<TextInputProps> = props => (
+  <ReactTextInput {...props} />
 );
-
-export default StyledTextInput;
