@@ -7,5 +7,5 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly with no properties', () => {
   const tree = renderer.create(<TextInput value="jason" />).toJSON();
-  expect(tree?.props.value).toBeDefined();
+  expect(tree?.props.value).toEqual('jason');
 });

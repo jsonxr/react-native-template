@@ -14,5 +14,6 @@
         "node_modules": true,
         "package-lock.json": true,
         "tsconfig.json": true
-    }
+    },
+    "editor.tabSize": 2
 }

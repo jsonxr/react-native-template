@@ -82,6 +82,20 @@ Set the code coverage threshold to 80% so that testing fails if poor code covera
 
 Avoid using snapshots (https://jestjs.io/docs/en/snapshot-testing) because they are so brittle. They are tied too closely to your implementation.
 
+### package.json
+
+If you have mocks that you are using repeatedly, add them to the setupFiles in jest. The name of the file doesn't matter as long as you point to it. The `<rootDir>` is
+
+    "setupFiles": [
+      "<rootDir>/src/jest.setup.ts"
+    ],
+
+Some modules are published untransformed. You need to exclude those modules from being ignored. So if you had a module named `my-module` that needed transpiling you would set it to the following:
+
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|my-module)/)"
+    ]
+
 ### commands:
 
 - `npm run test` - Run all tests
@@ -91,3 +105,4 @@ Avoid using snapshots (https://jestjs.io/docs/en/snapshot-testing) because they 
 ### files
 
 - `coverage` - The folder where coverage reports are generated
+- `src/jest.setup.ts` - Your global jest configuration for mocks identified by `package.jest.setupFiles`

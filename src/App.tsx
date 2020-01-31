@@ -1,11 +1,13 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { AppearanceProvider } from 'react-native-appearance';
 import env from './env';
 import { TextInput } from './components';
+import ThemeContext, { THEME_DEFAULT } from './themes/ThemeContext';
 
 const App = () => {
   return (
-    <>
+    <ThemeContext.Provider value={THEME_DEFAULT}>
       <StatusBar barStyle="light-content" />
       <SafeAreaView>
         <View style={styles.container}>
@@ -14,7 +16,7 @@ const App = () => {
           <TextInput value="jason" />
         </View>
       </SafeAreaView>
-    </>
+    </ThemeContext.Provider>
   );
 };
 
