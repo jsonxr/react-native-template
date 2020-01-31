@@ -80,8 +80,7 @@ This does
 
 Set the code coverage threshold to 80% so that testing fails if poor code coverage
 
-Snapshots: https://jestjs.io/docs/en/snapshot-testing
-Avoid using snapshots because they are so brittle. They are tied too closely to your implementation.
+Avoid using snapshots (https://jestjs.io/docs/en/snapshot-testing) because they are so brittle. They are tied too closely to your implementation.
 
 ### commands:
 
