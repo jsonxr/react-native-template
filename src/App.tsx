@@ -2,7 +2,6 @@ import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
 const App = () => {
-  console.log('linte, please catch');
   return (
     <>
       <StatusBar barStyle="light-content" />
