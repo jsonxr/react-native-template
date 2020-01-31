@@ -80,10 +80,13 @@ This does
 
 Set the code coverage threshold to 80% so that testing fails if poor code coverage
 
+Snapshots: https://jestjs.io/docs/en/snapshot-testing
+
 ### commands:
 
 - `npm run test` - Run all tests
 - `npm run test:coverage` - Run coverage reports for all tests
+- `npm run test:update` - Updates snapshots
 - `npm run test:watch` - Watches files for changes and executes tests against them
 
 ### files

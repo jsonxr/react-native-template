@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest --verbose --coverage",
+    "test:update": "jest --updateSnapshot",
     "test:watch": "jest --verbose --watch",
     "test:coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
     "prettier": "prettier -c './src/**/*.{ts,tsx,js,jsx,json}' index.js",
