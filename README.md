@@ -75,3 +75,17 @@ This does
 - `env.sample` - Rename this to `.env`
 - `.env` - Environment variables used during development
 - `.env.production` - the release build will pick up these values
+
+## 4. jest
+
+Set the code coverage threshold to 80% so that testing fails if poor code coverage
+
+### commands:
+
+- `npm run test` - Run all tests
+- `npm run test:coverage` - Run coverage reports for all tests
+- `npm run test:watch` - Watches files for changes and executes tests against them
+
+### files
+
+- `coverage` - The folder where coverage reports are generated
