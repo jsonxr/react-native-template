@@ -116,11 +116,23 @@ Some modules are published untransformed. You need to exclude those modules from
     brew install jq
     npm i -D patch-package
     npm i react-native-paper react-native-vector-icons
-    rm node_modules/react-native-vector-icons/react-native.config.js
-    echo "module.exports = { assets: [] }" > node_modules/react-native-vector-icons/react-native.config.js
-    jq -M 'del(.rnpm)' node_modules/react-native-vector-icons/package.json > test.json
-    mv test.json node_modules/react-native-vector-icons/package.json
-    patch-package react-native-vector-icons
+
+    # Create patch for package.json
+    mkdir patches
+    pushd node_modules/react-native-vector-icons
+    mv package.json package.json.original
+    jq -M 'del(.rnpm)' package.json.original > package.json
+    diff -u package.json.original package.json > ../../.patches/package.json.diff
+
+    # react-native.config.js
+    mv react-native.config.js react-native.config.js.original
+    echo "module.exports={dependencies:{assets:[]}}" > react-native.config.js
+    diff -u react-native.config.js.original react-native.config.js > ../../.patches/react-native.config.js.diff
+    popd
+
+    # To patch the files after an install, add this to "postinstall"
+    patch node_modules/react-native-vector-icons/package.json < .patches/package.json.diff
+    patch node_modules/react-native-vector-icons/react-native.config.js < .patches/react-native.config.js.diff
 
 `package.json`
 

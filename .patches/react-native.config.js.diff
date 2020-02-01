@@ -1,0 +1,9 @@
+--- react-native.config.js.original	1985-10-26 02:15:00.000000000 -0600
++++ react-native.config.js	2020-02-01 01:20:02.000000000 -0700
+@@ -1,5 +1 @@
+-module.exports = {
+-  dependency: {
+-    assets: ['Fonts'],
+-  },
+-};
++module.exports={dependencies:{assets:[]}}
