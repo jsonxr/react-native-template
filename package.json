@@ -9,15 +9,20 @@
     "test": "jest --verbose --coverage",
     "test:watch": "jest --verbose --watch",
     "test:coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "postinstall": "echo 'module.exports={dependencies:{assets:[]}}' > node_modules/react-native-vector-icons/react-native.config.js &&  patch -N node_modules/react-native-vector-icons/package.json < .patches/package.json.diff || true",
     "prettier": "prettier -c './src/**/*.{ts,tsx,js,jsx,json}' index.js",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx,json}'"
   },
   "dependencies": {
+    "@react-navigation/drawer": "^5.0.0-alpha.41",
+    "@react-navigation/stack": "^5.0.0-alpha.63",
     "@types/react-native-dotenv": "^0.2.0",
     "react": "16.9.0",
     "react-native": "^0.61.5",
     "react-native-appearance": "^0.3.2",
-    "react-native-dotenv": "^0.2.0"
+    "react-native-dotenv": "^0.2.0",
+    "react-native-paper": "^3.5.1",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -33,7 +38,9 @@
     "husky": "^4.2.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.4",
+    "patch-package": "^6.2.0",
     "prettier": "^1.19.1",
+    "react-devtools": "^3.6.3",
     "react-test-renderer": "16.9.0",
     "typescript": "^3.7.3"
   },

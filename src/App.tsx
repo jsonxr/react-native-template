@@ -1,30 +1,32 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import env from './env';
-import { TextInput } from './components';
-import ThemeContext, { THEME_DEFAULT } from './themes/ThemeContext';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+
+import {
+  Provider as PaperProvider,
+  //  DarkTheme,
+  DefaultTheme,
+  Theme,
+} from 'react-native-paper';
+import SurfaceExample from './SurfaceExample';
 
 const App = () => {
+  const [theme] = React.useState<Theme>(DefaultTheme);
+  const backgroundColor = theme?.colors?.background;
+
   return (
-    <ThemeContext.Provider value={THEME_DEFAULT}>
+    <PaperProvider theme={theme}>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView>
-        <View style={styles.container}>
-          <Text style={styles.welcome}>Jason to React Native!</Text>
-          <Text>{env.API_KEY}</Text>
-          <TextInput value="jason" />
-        </View>
+      <SafeAreaView style={[styles.container, { backgroundColor }]}>
+        <SurfaceExample />
       </SafeAreaView>
-    </ThemeContext.Provider>
+    </PaperProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: '#F5FCFF',
+    flex: 1,
+    //marginTop: Constants.statusBarHeight,
   },
   welcome: {
     fontSize: 24,

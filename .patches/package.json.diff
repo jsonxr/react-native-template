@@ -1,0 +1,14 @@
+--- node_modules/react-native-vector-icons/package.json	2020-02-01 01:25:10.000000000 -0700
++++ .patches/package.json	2020-02-01 01:25:23.000000000 -0700
+@@ -101,11 +101,6 @@
+     "type": "git",
+     "url": "git://github.com/oblador/react-native-vector-icons.git"
+   },
+-  "rnpm": {
+-    "assets": [
+-      "Fonts"
+-    ]
+-  },
+   "scripts": {
+     "build": "./scripts/build-icons.sh",
+     "build-antd": "./scripts/antdesign.sh",
