@@ -106,3 +106,24 @@ Some modules are published untransformed. You need to exclude those modules from
 
 - `coverage` - The folder where coverage reports are generated
 - `src/jest.setup.ts` - Your global jest configuration for mocks identified by `package.jest.setupFiles`
+
+---
+
+# material design
+
+---
+
+    brew install jq
+    npm i -D patch-package
+    npm i react-native-paper react-native-vector-icons
+    rm node_modules/react-native-vector-icons/react-native.config.js
+    echo "module.exports = { assets: [] }" > node_modules/react-native-vector-icons/react-native.config.js
+    jq -M 'del(.rnpm)' node_modules/react-native-vector-icons/package.json > test.json
+    mv test.json node_modules/react-native-vector-icons/package.json
+    patch-package react-native-vector-icons
+
+`package.json`
+
+    "scripts": {
+    +  "postinstall": "patch-package"
+    }
